@@ -1,0 +1,24 @@
+#第二分頁  顯示按鈕並跳出對話框 & 調整標籤位置
+#手臂車的控制:順向、逆向
+import tkinter as tk
+import tkinter.messagebox
+win = tk.Tk()
+win.title("simon's GUI")
+win.geometry('400x250')
+
+#函式庫功能
+def button1():
+    tk.messagebox.showinfo(title ="Kinematics", message = "程式執行中")
+def button2():
+    tk.messagebox.showinfo(title ="Inverse Kinematics", message = "程式執行中")
+    
+#順向-按鈕 →跳出對話訊息()
+#需要增加文字框 →輸入數字轉軸角度
+label = tk.Label(win, text = "順向抓取目標物").place(x=84,y=70)
+b1 = tk.Button(win,text = "START",borderwidth=8,relief='raised',
+               command = button1).place(x=100,y=100)
+#逆向-按鈕 →跳出對話訊息()
+label = tk.Label(win, text = "逆向抓取目標物").place(x=235,y=70)
+b2 = tk.Button(win, text = "START",borderwidth=8,relief='raised',
+               command = button2).place(x=250,y=100)
+win.mainloop()
