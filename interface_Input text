@@ -1,0 +1,29 @@
+#輸入的文本框 測試
+import tkinter as tk
+from tkinter import *
+import random
+import time
+
+win = tk.Tk()
+win.title("simon's GUI")
+win.geometry('500x500')
+
+var = tk.StringVar()
+
+def aaa():
+    var.set(int(random.randint(1,100)))
+    
+label = tk.Label(win, text = "『顯示隨機產生的亂數』：").place(x=10,y=10)
+b1 = tk.Button(win, text = "SHOW",borderwidth=8,relief='raised',
+               command = aaa).place(x=225,y=60)
+
+t = tk.Label(win,textvariable = var,height=2, width=30,bg = 'yellow')
+t.pack(padx=0,pady=200)
+
+win.mainloop()
+
+#將程式加入按鈕下，不會執行(只能在結果欄顯示)
+#按鈕的def 無法加入迴圈
+#label & button 無法做連結 (按了按鈕 不會執行label)
+#entry 的問題
+#按了一次按鈕 label重複執行
