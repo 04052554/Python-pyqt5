@@ -1,0 +1,72 @@
+# Final version
+import tkinter as tk
+import tkinter.messagebox
+from tkinter import ttk
+
+win = tk.Tk()
+win.title("simon's GUI")
+win.geometry('410x260')
+
+#函式庫功能(分頁一)
+def button1():
+    tk.messagebox.showinfo(title ="任務一", message = "程式執行中")
+def button2():
+    tk.messagebox.showinfo(title ="任務二", message = "程式執行中")
+#函式庫功能(分頁二)
+def button3():
+    tk.messagebox.showinfo(title ="Kinematics", message = "程式執行中")
+def button4():
+    tk.messagebox.showinfo(title ="Inverse Kinematics", message = "程式執行中")
+#函式庫功能(分頁三)
+def button5():
+    tk.messagebox.showinfo(title ="『Based on color RED』", message = "程式執行中")
+def button6():
+    tk.messagebox.showinfo(title ="『Based on color BLUE』", message = "程式執行中")
+def button7():
+    tk.messagebox.showinfo(title ="『Based on cuboid』", message = "程式執行中")
+def button8():
+    tk.messagebox.showinfo(title ="『Based on cylinder』", message = "程式執行中")
+
+tabControl = ttk.Notebook(win) # Create Tab Control
+
+#第一分頁
+tab1 = ttk.Frame(tabControl) # Create a tab
+tabControl.add(tab1, text='第一分頁') # Add the tab
+tabControl.pack(expand=1, fill="both") # Pack to make visible
+#單一手臂車任務-按鈕 →跳出對話訊息()
+label = tk.Label(tab1, text = "『單一機械手臂車』：").place(x=10,y=10)
+a1 = tk.Button(tab1,text = "任務一",borderwidth=8,relief='raised',
+               command = button1).place(x=180,y=60)
+#群組手臂車協同任務-按鈕 →跳出對話訊息()
+label = tk.Label(tab1, text = "『群組機械手臂車』：").place(x=10,y=120)
+a2 = tk.Button(tab1, text = "任務二",borderwidth=8,relief='raised',
+               command = button2).place(x=180,y=160)
+
+#第二分頁
+tab2 = ttk.Frame(tabControl)
+tabControl.add(tab2, text='第二分頁')
+
+label = tk.Label(tab2, text = "順向抓取目標物").place(x=84,y=70)
+b1 = tk.Button(tab2,text = "START",borderwidth=8,relief='raised',
+               command = button3).place(x=100,y=100)
+label = tk.Label(tab2, text = "逆向抓取目標物").place(x=235,y=70)
+b2 = tk.Button(tab2,text = "START",borderwidth=8,relief='raised',
+               command = button4).place(x=251,y=100)
+
+#第三分頁 
+tab3 = ttk.Frame(tabControl)
+tabControl.add(tab3, text='第三分頁')
+#針對【顏色】判斷目標物 →跳出對話訊息()
+label = tk.Label(tab3,text = "『以顏色為基底，做視覺判斷』：").place(x=10,y=10)
+c1 = tk.Button(tab3,text = "　紅色　",borderwidth=8,relief='raised',
+               command = button5).place(x=100,y=50)
+c2 = tk.Button(tab3, text = "　藍色　",borderwidth=8,relief='raised',
+               command = button6).place(x=250,y=50)
+#針對【形狀】判斷目標物 →跳出對話訊息()
+label = tk.Label(tab3,text = "『以形狀為基底，做視覺判斷』：").place(x=10,y=120)
+c3 = tk.Button(tab3,text = "　長方體　",borderwidth=8,relief='raised',
+               command = button7).place(x=95,y=160)
+c4 = tk.Button(tab3,text = "　圓柱體　",borderwidth=8,relief='raised',
+               command = button8).place(x=245,y=160)
+
+win.mainloop()
