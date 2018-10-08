@@ -1,0 +1,39 @@
+#分頁的測試
+import tkinter as tk
+from tkinter import ttk
+import tkinter.messagebox
+
+win = tk.Tk()
+win.title("simon's GUI")
+win.geometry('400x250')
+
+def button1():
+    tk.messagebox.showinfo(title ="任務一", message = "程式執行中")
+def button2():
+    tk.messagebox.showinfo(title ="任務二", message = "程式執行中")
+
+tabControl = ttk.Notebook(win)
+
+tab1 = ttk.Frame(tabControl)
+tabControl.add(tab1, text='第一分頁')
+tabControl.pack(expand=0, fill="both")
+tab2 = ttk.Frame(tabControl)
+tabControl.add(tab2, text='第二分頁')
+
+# LabelFrame using tab1 as the parent
+aaa = ttk.LabelFrame(tab1, text='Final Mission')
+aaa.grid(column=0, row=0, padx=150, pady=50)
+
+# Label using mighty as the parent
+a_label = ttk.Label(aaa, text=' Enter a number: ')
+a_label.grid(column=0, row=0, sticky='W')
+
+# LabelFrame using tab1 as the parent
+aaa = ttk.LabelFrame(tab2, text='Mission')
+aaa.grid(column=0, row=0, padx=150, pady=50)
+
+# Label using mighty as the parent
+a_label = ttk.Label(aaa, text=' Enter a number: ')
+a_label.grid(column=0, row=0, sticky='W')
+
+win.mainloop()
